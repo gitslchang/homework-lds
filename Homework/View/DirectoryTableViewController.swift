@@ -10,7 +10,7 @@ import UIKit
 
 extension DirectoryTableViewController: DictionaryDataProviderDelegate {
     func updateDictionaryData() {
-        tableView.reloadData()
+        loadData()
     }
 }
 
@@ -19,25 +19,30 @@ class DirectoryTableViewController: BaseTableViewController {
     fileprivate static let cellIdentifier = "infoCell"
     fileprivate static let myTitle = "Sentient Beings"
     
-    var dataProvider: DictionaryDataProvider?
+    var dataProvider: DictionaryDataProvider!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = DirectoryTableViewController.myTitle
         
+        TableHelper.removeEmptyCellsFromTableBottom(tableView)
+        tableView.backgroundView = getNoTableDataView()
+        
         dataProvider = DictionaryDataProvider(delegate: self)
     }
 
-    
+    func loadData() {
+        
+        tableView.reloadData()
+    }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 0
     }
 
     

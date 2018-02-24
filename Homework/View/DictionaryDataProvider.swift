@@ -22,6 +22,12 @@ class DictionaryDataProvider: NSObject, ApiControllerProtocol {
 
     }
     
+    func getSentientBeings() {
+        api = DictionaryApiController(delegate: self)
+        
+    }
+    
+    
     // MARK: ApiControllerProtocol
     func didReceiveError() {
         print("error")

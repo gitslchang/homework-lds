@@ -17,6 +17,8 @@ class BaseTableViewController: UITableViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.white 
     }
 
-    
+    func getNoTableDataView() -> EmptyTableView {
+        return TableHelper.getEmptyTableView(iconName: "beings", text: "Information about sentient beings will be displayed here.")
+    }
 
 }
