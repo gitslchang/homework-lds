@@ -8,12 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		F8B99AE72040E03A008E5215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B99AE62040E03A008E5215 /* AppDelegate.swift */; };
-		F8B99AE92040E03A008E5215 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B99AE82040E03A008E5215 /* ViewController.swift */; };
 		F8B99AEC2040E03A008E5215 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8B99AEA2040E03A008E5215 /* Main.storyboard */; };
 		F8B99AEF2040E03A008E5215 /* Homework.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F8B99AED2040E03A008E5215 /* Homework.xcdatamodeld */; };
 		F8B99AF12040E03A008E5215 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B99AF02040E03A008E5215 /* Assets.xcassets */; };
 		F8B99AF42040E03A008E5215 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8B99AF22040E03A008E5215 /* LaunchScreen.storyboard */; };
 		F8B99AFF2040E03A008E5215 /* HomeworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B99AFE2040E03A008E5215 /* HomeworkTests.swift */; };
+		F8B99B0D2040E8B3008E5215 /* DirectoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B99B0C2040E8B3008E5215 /* DirectoryTableViewController.swift */; };
+		F8B99B0F2040E9DE008E5215 /* DirectoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B99B0E2040E9DE008E5215 /* DirectoryTableViewCell.swift */; };
+		F8B99B112040EA7D008E5215 /* DirectoryConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B99B102040EA7D008E5215 /* DirectoryConstants.swift */; };
+		F8B99B132040EA99008E5215 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B99B122040EA99008E5215 /* BaseTableViewController.swift */; };
+		F8B99B152040EAED008E5215 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B99B142040EAED008E5215 /* UIKitExtensions.swift */; };
+		F8B99B1C2040F741008E5215 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B99B1B2040F741008E5215 /* ProfileViewController.swift */; };
+		F8B99B1E2040FF4D008E5215 /* DictionaryApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B99B1D2040FF4D008E5215 /* DictionaryApiController.swift */; };
+		F8B99B2020410042008E5215 /* DictionaryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B99B1F20410042008E5215 /* DictionaryDataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +36,6 @@
 /* Begin PBXFileReference section */
 		F8B99AE32040E03A008E5215 /* Homework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B99AE62040E03A008E5215 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F8B99AE82040E03A008E5215 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F8B99AEB2040E03A008E5215 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F8B99AEE2040E03A008E5215 /* Homework.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Homework.xcdatamodel; sourceTree = "<group>"; };
 		F8B99AF02040E03A008E5215 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +44,14 @@
 		F8B99AFA2040E03A008E5215 /* HomeworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B99AFE2040E03A008E5215 /* HomeworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkTests.swift; sourceTree = "<group>"; };
 		F8B99B002040E03A008E5215 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8B99B0C2040E8B3008E5215 /* DirectoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryTableViewController.swift; sourceTree = "<group>"; };
+		F8B99B0E2040E9DE008E5215 /* DirectoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryTableViewCell.swift; sourceTree = "<group>"; };
+		F8B99B102040EA7D008E5215 /* DirectoryConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryConstants.swift; sourceTree = "<group>"; };
+		F8B99B122040EA99008E5215 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		F8B99B142040EAED008E5215 /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
+		F8B99B1B2040F741008E5215 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F8B99B1D2040FF4D008E5215 /* DictionaryApiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryApiController.swift; sourceTree = "<group>"; };
+		F8B99B1F20410042008E5215 /* DictionaryDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,12 +94,15 @@
 			isa = PBXGroup;
 			children = (
 				F8B99AE62040E03A008E5215 /* AppDelegate.swift */,
-				F8B99AE82040E03A008E5215 /* ViewController.swift */,
-				F8B99AEA2040E03A008E5215 /* Main.storyboard */,
+				F8B99B092040E24B008E5215 /* View */,
+				F8B99B0A2040E267008E5215 /* Model */,
+				F8B99B172040EB76008E5215 /* Storyboard */,
+				F8B99B0B2040E2D1008E5215 /* Controller */,
+				F8B99B162040EAF7008E5215 /* Util */,
 				F8B99AF02040E03A008E5215 /* Assets.xcassets */,
 				F8B99AF22040E03A008E5215 /* LaunchScreen.storyboard */,
 				F8B99AF52040E03A008E5215 /* Info.plist */,
-				F8B99AED2040E03A008E5215 /* Homework.xcdatamodeld */,
+				F8B99B182040F282008E5215 /* Supporting files */,
 			);
 			path = Homework;
 			sourceTree = "<group>";
@@ -97,6 +114,58 @@
 				F8B99B002040E03A008E5215 /* Info.plist */,
 			);
 			path = HomeworkTests;
+			sourceTree = "<group>";
+		};
+		F8B99B092040E24B008E5215 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F8B99B102040EA7D008E5215 /* DirectoryConstants.swift */,
+				F8B99B122040EA99008E5215 /* BaseTableViewController.swift */,
+				F8B99B0C2040E8B3008E5215 /* DirectoryTableViewController.swift */,
+				F8B99B1F20410042008E5215 /* DictionaryDataProvider.swift */,
+				F8B99B0E2040E9DE008E5215 /* DirectoryTableViewCell.swift */,
+				F8B99B1B2040F741008E5215 /* ProfileViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F8B99B0A2040E267008E5215 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F8B99AED2040E03A008E5215 /* Homework.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F8B99B0B2040E2D1008E5215 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F8B99B1D2040FF4D008E5215 /* DictionaryApiController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F8B99B162040EAF7008E5215 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				F8B99B142040EAED008E5215 /* UIKitExtensions.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		F8B99B172040EB76008E5215 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				F8B99AEA2040E03A008E5215 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		F8B99B182040F282008E5215 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,9 +271,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8B99B132040EA99008E5215 /* BaseTableViewController.swift in Sources */,
+				F8B99B112040EA7D008E5215 /* DirectoryConstants.swift in Sources */,
 				F8B99AEF2040E03A008E5215 /* Homework.xcdatamodeld in Sources */,
-				F8B99AE92040E03A008E5215 /* ViewController.swift in Sources */,
+				F8B99B0D2040E8B3008E5215 /* DirectoryTableViewController.swift in Sources */,
+				F8B99B2020410042008E5215 /* DictionaryDataProvider.swift in Sources */,
+				F8B99B1E2040FF4D008E5215 /* DictionaryApiController.swift in Sources */,
 				F8B99AE72040E03A008E5215 /* AppDelegate.swift in Sources */,
+				F8B99B152040EAED008E5215 /* UIKitExtensions.swift in Sources */,
+				F8B99B1C2040F741008E5215 /* ProfileViewController.swift in Sources */,
+				F8B99B0F2040E9DE008E5215 /* DirectoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
