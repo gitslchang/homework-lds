@@ -15,7 +15,7 @@ protocol DictionaryDataProviderDelegate {
 class DictionaryDataProvider: NSObject, ApiControllerProtocol {
     
     var delegate: DictionaryDataProviderDelegate!
-    var api: DictionaryApiController?
+    var api: DirectoryApiController?
     
     init(delegate: DictionaryDataProviderDelegate) {
         self.delegate = delegate
@@ -23,7 +23,7 @@ class DictionaryDataProvider: NSObject, ApiControllerProtocol {
     }
     
     func getSentientBeings() {
-        api = DictionaryApiController(delegate: self)
+        api = DirectoryApiController(delegate: self)
         
     }
     

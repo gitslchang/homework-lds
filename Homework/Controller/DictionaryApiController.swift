@@ -14,7 +14,11 @@ protocol ApiControllerProtocol {
     func didReceiveError()
 }
 
-class DictionaryApiController {
+struct DirectoryUrl {
+    static let directoryUrl = "mobile/interview/directory"
+}
+
+class DirectoryApiController {
     
     var baseApiUrl: String!
     var myDict: NSDictionary?
@@ -27,5 +31,22 @@ class DictionaryApiController {
             self.myDict = NSDictionary(contentsOfFile: path)
         }
         
+    }
+    
+    func getImageData(path: String, completionHandler: ((_ data: Data) -> Void)?) {
+        let url = URL(string: path)
+        let session =  URLSession.shared
+        
+        let task = session.dataTask(with: url!, completionHandler: {data, response, error -> Void in
+            DispatchQueue.main.async(execute: {
+                if data != nil {
+                    if let handler = completionHandler {
+                        handler(data!)
+                    }
+                }
+            })
+        })
+        
+        task.resume()
     }
 }
