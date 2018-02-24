@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var affiliationLabel: UILabel!
+    @IBOutlet weak var noImageLabel: UILabel!
     
     @IBOutlet weak var bornLabel: UILabel!
     @IBOutlet weak var birthdateLabel: UILabel!
@@ -28,6 +29,7 @@ class ProfileViewController: UIViewController {
 
         nameLabel.textColor = DirectoryColor.mainTitleText
         affiliationLabel.textColor = DirectoryColor.subtitleText
+        noImageLabel.textColor = DirectoryColor.subtitleText
         forceSensitiveLabel.textColor = DirectoryColor.forceSensitiveText
         bornLabel.textColor = DirectoryColor.mainTitleText
         birthdateLabel.textColor = DirectoryColor.subtitleText
@@ -35,12 +37,15 @@ class ProfileViewController: UIViewController {
         if let being = sentientBeing {
             nameLabel.text = being.fullNameDisplay()
             affiliationLabel.text = being.affiliationDisplay()
+            nameLabel.sizeToFit()
+            affiliationLabel.sizeToFit()
             forceSensitiveLabel.isHidden = !being.forceSensitive
             birthdateLabel.text = being.birthdateDisplay()
         }
         
         if let image = profileImage {
             profileImageView.image = image
+            noImageLabel.isHidden = true
         }
         
     }

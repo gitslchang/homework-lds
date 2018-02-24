@@ -8,13 +8,17 @@
 
 import UIKit
 
+struct TableNib {
+    static let emptyTable = "EmptyTableView"
+}
+
 struct TableColor {
     static let defaultBackgroundColor = UIColor.fromHex(0xf0eff5)
 }
 
 class TableHelper: NSObject {
     class func getEmptyTableView(iconName: String, text: String) -> EmptyTableView {
-        let emptyView = Bundle.main.loadNibNamed("EmptyTableView", owner: self, options: nil)?[0] as! EmptyTableView
+        let emptyView = Bundle.main.loadNibNamed(TableNib.emptyTable, owner: self, options: nil)?[0] as! EmptyTableView
         emptyView.initView(imageName: iconName, text: text)
         return emptyView
     }

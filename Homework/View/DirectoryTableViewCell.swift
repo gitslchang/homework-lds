@@ -10,8 +10,8 @@ import UIKit
 
 extension DirectoryTableViewCell: ApiControllerProtocol {
     func didReceiveResults() {}
-    func didReceiveError() {
-        print("error")
+    func didReceiveError(statusCode: Int, error: String) {
+        print(error)
     }
 }
 
@@ -46,6 +46,10 @@ class DirectoryTableViewCell: UITableViewCell {
     func setCellData(tableView: UITableView, indexPath: IndexPath, sentientBeing: SentientBeing) {
         self.indexPath = indexPath
         self.tableView = tableView
+        self.sentientBeing = sentientBeing
+        
+        nameLabel.text = sentientBeing.fullNameDisplay()
+        affiliationLabel.text = sentientBeing.affiliationDisplay()
         
         if let url = sentientBeing.pictureUrl {
             api.getImageData(path: url, completionHandler: handleImageDataResponse(_:))
@@ -56,9 +60,11 @@ class DirectoryTableViewCell: UITableViewCell {
     }
     
     func handleImageDataResponse(_ data: Data) {
+        // in real app could store image in cache, but keeping it simple
         let image = UIImage(data: data)
     
         DispatchQueue.main.async(execute: {
+            // update cell with loaded image
             if let cellToUpdate = self.tableView.cellForRow(at: self.indexPath) as? DirectoryTableViewCell {
                 cellToUpdate.profileImageView.image = image
                 cellToUpdate.loadingImageLabel.isHidden = true

@@ -10,14 +10,16 @@ import UIKit
 
 extension DirectoryTableViewController: DictionaryDataProviderDelegate {
     func updateDictionaryData() {
-        loadData()
+        sentientBeings = dataProvider.queryDirectory()
+        tableView.reloadData()
     }
 }
 
-class DirectoryTableViewController: BaseTableViewController {
+class DirectoryTableViewController: UITableViewController {
     
-    fileprivate static let cellIdentifier = "infoCell"
-    fileprivate static let myTitle = "Sentient Beings"
+    let cellIdentifier = "infoCell"
+    let myTitle = "Sentient Beings"
+    let noDataMessage = "Important sentient beings of the universe will be displayed here."
     
     var dataProvider: DictionaryDataProvider!
     var sentientBeings = [SentientBeing]() {
@@ -29,17 +31,16 @@ class DirectoryTableViewController: BaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = DirectoryTableViewController.myTitle
+        title = myTitle
+        
+        self.navigationController?.navigationBar.barTintColor = DirectoryColor.navigationTint
+        self.navigationController?.navigationBar.tintColor = UIColor.white 
         
         TableHelper.removeEmptyCellsFromTableBottom(tableView: tableView)
-        tableView.backgroundView = getNoTableDataView()
+        tableView.backgroundView = TableHelper.getEmptyTableView(iconName: DirectoryIcon.noDataIcon, text: noDataMessage)
         
         dataProvider = DictionaryDataProvider(delegate: self)
-    }
-
-    fileprivate func loadData() {
-        
-        tableView.reloadData()
+        dataProvider.getSentientBeingsFromApi()
     }
 
     // MARK: - Table view data source
@@ -53,8 +54,9 @@ class DirectoryTableViewController: BaseTableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: DirectoryTableViewController.cellIdentifier, for: indexPath) as! DirectoryTableViewCell
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DirectoryTableViewCell
+        let being = sentientBeings[indexPath.row]
+        cell.setCellData(tableView: tableView, indexPath: indexPath, sentientBeing: being)
 
         return cell
     }
@@ -62,9 +64,6 @@ class DirectoryTableViewController: BaseTableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
-    
-
-    
     
     // MARK: - Navigation
 
@@ -74,6 +73,7 @@ class DirectoryTableViewController: BaseTableViewController {
             let destination = segue.destination as! ProfileViewController
             if let cell = sender as? DirectoryTableViewCell {
                 destination.sentientBeing = cell.sentientBeing
+                destination.profileImage = cell.profileImageView.image
             }
         }
     }

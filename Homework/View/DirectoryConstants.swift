@@ -27,4 +27,8 @@ struct DirectorySegue {
     static let showProfile = "showProfile"
 }
 
+struct DirectoryIcon {
+    static let noDataIcon = "beings"
+}
+
 

@@ -22,15 +22,23 @@ class DictionaryDataProvider: NSObject, ApiControllerProtocol {
 
     }
     
-    func getSentientBeings() {
+    func getSentientBeingsFromApi() {
         api = DirectoryApiController(delegate: self)
-        
+        api?.getDirectoryIndividuals(completionHandler: nil)
+    }
+    
+    func queryDirectory() -> [SentientBeing] {
+        api = DirectoryApiController(delegate: self)
+        if let beings = api?.fetchSentientBeingsFromLocalStore() {
+            return beings 
+        }
+        return [SentientBeing]()
     }
     
     
     // MARK: ApiControllerProtocol
-    func didReceiveError() {
-        print("error")
+    func didReceiveError(statusCode: Int, error: String) {
+        print(error)
     }
     
     func didReceiveResults() {
