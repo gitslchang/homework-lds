@@ -22,3 +22,5 @@ struct Affiliation {
     static let sith = "SITH"
     static let jedi = "JEDI"
 }
+
+

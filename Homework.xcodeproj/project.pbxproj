@@ -24,6 +24,8 @@
 		F8B99B24204104FD008E5215 /* EmptyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B99B23204104FD008E5215 /* EmptyTableView.swift */; };
 		F8B99B262041050A008E5215 /* EmptyTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B99B252041050A008E5215 /* EmptyTableView.xib */; };
 		F8B99B2A2041085D008E5215 /* TableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B99B292041085D008E5215 /* TableHelper.swift */; };
+		F8B99B2C20411C77008E5215 /* SentientBeingMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B99B2B20411C77008E5215 /* SentientBeingMO.swift */; };
+		F8B99B2E20411ED1008E5215 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B99B2D20411ED1008E5215 /* DateUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		F8B99B23204104FD008E5215 /* EmptyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableView.swift; sourceTree = "<group>"; };
 		F8B99B252041050A008E5215 /* EmptyTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyTableView.xib; sourceTree = "<group>"; };
 		F8B99B292041085D008E5215 /* TableHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHelper.swift; sourceTree = "<group>"; };
+		F8B99B2B20411C77008E5215 /* SentientBeingMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentientBeingMO.swift; sourceTree = "<group>"; };
+		F8B99B2D20411ED1008E5215 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				F8B99AED2040E03A008E5215 /* Homework.xcdatamodeld */,
+				F8B99B2B20411C77008E5215 /* SentientBeingMO.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 			children = (
 				F8B99B142040EAED008E5215 /* UIKitExtensions.swift */,
 				F8B99B292041085D008E5215 /* TableHelper.swift */,
+				F8B99B2D20411ED1008E5215 /* DateUtil.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -303,12 +309,14 @@
 				F8B99B0D2040E8B3008E5215 /* DirectoryTableViewController.swift in Sources */,
 				F8B99B2020410042008E5215 /* DictionaryDataProvider.swift in Sources */,
 				F8B99B1E2040FF4D008E5215 /* DictionaryApiController.swift in Sources */,
+				F8B99B2C20411C77008E5215 /* SentientBeingMO.swift in Sources */,
 				F8B99B24204104FD008E5215 /* EmptyTableView.swift in Sources */,
 				F8B99AE72040E03A008E5215 /* AppDelegate.swift in Sources */,
 				F8B99B2A2041085D008E5215 /* TableHelper.swift in Sources */,
 				F8B99B152040EAED008E5215 /* UIKitExtensions.swift in Sources */,
 				F8B99B1C2040F741008E5215 /* ProfileViewController.swift in Sources */,
 				F8B99B0F2040E9DE008E5215 /* DirectoryTableViewCell.swift in Sources */,
+				F8B99B2E20411ED1008E5215 /* DateUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

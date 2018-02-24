@@ -20,6 +20,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var birthdateLabel: UILabel!
     @IBOutlet weak var forceSensitiveLabel: UILabel!
     
+    var sentientBeing: SentientBeing?
+    var profileImage: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +31,16 @@ class ProfileViewController: UIViewController {
         forceSensitiveLabel.textColor = DirectoryColor.forceSensitiveText
         bornLabel.textColor = DirectoryColor.mainTitleText
         birthdateLabel.textColor = DirectoryColor.subtitleText
+        
+        if let being = sentientBeing {
+            nameLabel.text = being.fullNameDisplay()
+            affiliationLabel.text = being.affiliationDisplay()
+            forceSensitiveLabel.isHidden = !being.forceSensitive
+        }
+        
+        if let image = profileImage {
+            profileImageView.image = image
+        }
         
     }
 

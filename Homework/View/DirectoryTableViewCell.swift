@@ -26,7 +26,7 @@ class DirectoryTableViewCell: UITableViewCell {
     
     var indexPath: IndexPath!
     var tableView: UITableView!
-    var sentientBeing: String!
+    var sentientBeing: SentientBeing!
     
     var api: DirectoryApiController!
     
@@ -43,11 +43,11 @@ class DirectoryTableViewCell: UITableViewCell {
         
     }
 
-    func setCellData(tableView: UITableView, indexPath: IndexPath, imageUrl: String?) {
+    func setCellData(tableView: UITableView, indexPath: IndexPath, sentientBeing: SentientBeing) {
         self.indexPath = indexPath
         self.tableView = tableView
         
-        if let url = imageUrl {
+        if let url = sentientBeing.pictureUrl {
             api.getImageData(path: url, completionHandler: handleImageDataResponse(_:))
         } else {
             loadingImageLabel.text = "No image"
