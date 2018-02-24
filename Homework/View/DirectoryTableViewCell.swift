@@ -20,6 +20,7 @@ class DirectoryTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var affiliationLabel: UILabel!
+    @IBOutlet weak var loadingImageLabel: UILabel!
     
     @IBOutlet weak var profileImageView: UIImageView!
     
@@ -35,17 +36,23 @@ class DirectoryTableViewCell: UITableViewCell {
         
         nameLabel.textColor = DirectoryColor.mainTitleText
         affiliationLabel.textColor = DirectoryColor.subtitleText
+        loadingImageLabel.textColor = DirectoryColor.subtitleText
         
         profileImageView.clipsToBounds = true
         profileImageView.layer.cornerRadius = profileImageView.bounds.width/2
         
     }
 
-    func setCellData(tableView: UITableView, indexPath: IndexPath, sentientBeing: String) {
+    func setCellData(tableView: UITableView, indexPath: IndexPath, imageUrl: String?) {
         self.indexPath = indexPath
         self.tableView = tableView
         
-        api.getImageData(path: sentientBeing, completionHandler: handleImageDataResponse(_:))
+        if let url = imageUrl {
+            api.getImageData(path: url, completionHandler: handleImageDataResponse(_:))
+        } else {
+            loadingImageLabel.text = "No image"
+        }
+        
     }
     
     func handleImageDataResponse(_ data: Data) {
@@ -54,6 +61,7 @@ class DirectoryTableViewCell: UITableViewCell {
         DispatchQueue.main.async(execute: {
             if let cellToUpdate = self.tableView.cellForRow(at: self.indexPath) as? DirectoryTableViewCell {
                 cellToUpdate.profileImageView.image = image
+                cellToUpdate.loadingImageLabel.isHidden = true
             }
         })
     }

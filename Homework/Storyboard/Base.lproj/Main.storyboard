@@ -50,9 +50,17 @@
                                                 <constraint firstAttribute="width" constant="68" id="jeS-sv-l0J"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WsI-hE-dyS">
+                                            <rect key="frame" x="305" y="28" width="52" height="13.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="WsI-hE-dyS" firstAttribute="centerX" secondItem="2Xt-7s-9gm" secondAttribute="centerX" id="DFk-n1-LxW"/>
                                         <constraint firstItem="HkI-H6-JDK" firstAttribute="leading" secondItem="MO1-Kv-2tL" secondAttribute="leading" constant="10" id="Gcm-wh-h7w"/>
+                                        <constraint firstItem="WsI-hE-dyS" firstAttribute="centerY" secondItem="2Xt-7s-9gm" secondAttribute="centerY" id="UWO-kv-cMf"/>
                                         <constraint firstItem="2Xt-7s-9gm" firstAttribute="leading" secondItem="HkI-H6-JDK" secondAttribute="trailing" constant="10" id="ZtO-P2-1cM"/>
                                         <constraint firstItem="2Xt-7s-9gm" firstAttribute="centerY" secondItem="MO1-Kv-2tL" secondAttribute="centerY" id="gca-S8-wo4"/>
                                         <constraint firstAttribute="trailing" secondItem="2Xt-7s-9gm" secondAttribute="trailing" constant="10" id="nfT-Kh-c6o"/>
@@ -61,6 +69,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="affiliationLabel" destination="fe9-AO-MEk" id="ceW-1u-Xh9"/>
+                                    <outlet property="loadingImageLabel" destination="WsI-hE-dyS" id="aKG-Sb-lyW"/>
                                     <outlet property="nameLabel" destination="AIS-r8-fAy" id="i4j-2p-ClC"/>
                                     <outlet property="profileImageView" destination="2Xt-7s-9gm" id="uDd-fR-GnJ"/>
                                     <segue destination="PDl-Np-Sgs" kind="show" identifier="showProfile" id="MRt-aN-Put"/>

@@ -49,7 +49,12 @@ class DirectoryTableViewController: BaseTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DirectoryTableViewController.cellIdentifier, for: indexPath) as! DirectoryTableViewCell
 
-        cell.setCellData(tableView: tableView, indexPath: indexPath, sentientBeing: "https://edge.ldscdn.org/mobile/interview/02.jpg")
+        if indexPath.row == 0 {
+            cell.setCellData(tableView: tableView, indexPath: indexPath, imageUrl: "https://edge.ldscdn.org/mobile/interview/04.png")
+        } else {
+            cell.setCellData(tableView: tableView, indexPath: indexPath, imageUrl: nil)
+        }
+        
 
         return cell
     }
