@@ -23,4 +23,8 @@ struct Affiliation {
     static let jedi = "JEDI"
 }
 
+struct DirectorySegue {
+    static let showProfile = "showProfile"
+}
+
 

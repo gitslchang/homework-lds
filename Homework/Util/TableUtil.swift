@@ -1,5 +1,5 @@
 //
-//  TableHelper.swift
+//  TableUtil.swift
 //  Homework
 //
 //  Created by Stacy Chang on 2/23/18.
@@ -19,9 +19,8 @@ class TableHelper: NSObject {
         return emptyView
     }
     
-    class func removeEmptyCellsFromTableBottom(_ tableView: UITableView) {
+    class func removeEmptyCellsFromTableBottom(tableView: UITableView) {
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         tableView.backgroundColor = TableColor.defaultBackgroundColor
     }
 }
-

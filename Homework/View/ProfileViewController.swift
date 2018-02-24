@@ -36,6 +36,7 @@ class ProfileViewController: UIViewController {
             nameLabel.text = being.fullNameDisplay()
             affiliationLabel.text = being.affiliationDisplay()
             forceSensitiveLabel.isHidden = !being.forceSensitive
+            birthdateLabel.text = being.birthdateDisplay()
         }
         
         if let image = profileImage {

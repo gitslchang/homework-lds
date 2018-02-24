@@ -20,18 +20,24 @@ class DirectoryTableViewController: BaseTableViewController {
     fileprivate static let myTitle = "Sentient Beings"
     
     var dataProvider: DictionaryDataProvider!
+    var sentientBeings = [SentientBeing]() {
+        didSet {
+            let hasData = sentientBeings.count > 0
+            tableView.backgroundView?.isHidden = hasData
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = DirectoryTableViewController.myTitle
         
-        TableHelper.removeEmptyCellsFromTableBottom(tableView)
+        TableHelper.removeEmptyCellsFromTableBottom(tableView: tableView)
         tableView.backgroundView = getNoTableDataView()
         
         dataProvider = DictionaryDataProvider(delegate: self)
     }
 
-    func loadData() {
+    fileprivate func loadData() {
         
         tableView.reloadData()
     }
@@ -42,7 +48,7 @@ class DirectoryTableViewController: BaseTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return sentientBeings.count
     }
 
     
@@ -59,14 +65,18 @@ class DirectoryTableViewController: BaseTableViewController {
     
 
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == DirectorySegue.showProfile {
+            let destination = segue.destination as! ProfileViewController
+            if let cell = sender as? DirectoryTableViewCell {
+                destination.sentientBeing = cell.sentientBeing
+            }
+        }
     }
-    */
+    
 
 }
